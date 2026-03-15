@@ -1,2 +1,3 @@
 Sam Oystreck (A00478278): Responsible for creation of the github, factorial.c and forkTaskExecutor.c files.
 Ben Anderson (A00473343): Created the producer_consumer.c file to initialize the shared memory for both producer.c and consumer.c.
+Denzyl Albarracin (A00473792): Created sorting.c 
