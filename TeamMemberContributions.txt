@@ -1,0 +1,1 @@
+Sam Oystreck (A00478278): Responsible for creation of the github, factorial.c and forkTaskExecutor.c files.
