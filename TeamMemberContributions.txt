@@ -1,4 +1,5 @@
 Sam Oystreck (A00478278): Responsible for creation of the github, factorial.c and forkTaskExecutor.c files.
 Ben Anderson (A00473343): Created the producer_consumer.c file to initialize the shared memory for both producer.c and consumer.c.
 Denzyl Albarracin (A00473792): Created sorting.c and worked on main menu 
+Aidan Shand (A00458881): created producer.c and consumer.c to work with producer_consumer.c
 Bhanu Prakash (A00468530): Fixed and completed main_menu.c, debugged execution errors, compiled and integrated all program files, and ensured proper process execution using fork() and execl()
