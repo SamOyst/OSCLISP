@@ -1,5 +1,7 @@
 // Main menu for Project
 // @Author: Denzyl Albarracin (A00473792)
+// @Author: Bhanu Prakash (A00468530)
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -31,25 +33,28 @@ int main() {
         printf("1. Fork-Based Task Executor System\n");
         printf("2. Producer-Consumer Simulation System\n");
         printf("3. Quit\n");
-        printf("Please enter your choice: ")
+        printf("Please enter your choice: ");   
 
         if (scanf("%d", &choice) != 1) {
-            printf("Invalid input.\n")
+            printf("Invalid input.\n");        
             while (getchar() != '\n');
             continue;
         }
 
         switch(choice) {
             case 1:
-                // TO DO: make files for this
-                run_program("");
+                // runs your fork executor
+                run_program("./forkTaskExecutor");   
                 break;
+
             case 2:
-                // TO DO: make files for this
-                run_program("");
+                // runs producer-consumer system
+                run_program("./producer_consumer");  
                 break;
+
             case 3: 
                 return 0;
+
             default:
                 printf("invalid choice try agian.\n");
         }
