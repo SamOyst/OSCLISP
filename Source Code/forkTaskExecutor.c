@@ -12,6 +12,7 @@ int runProcess(int selection)
     //Checking for an error on fork
     if (pid < 0)
     {
+        
         printf("Error enountered at fork");
         return (1);
     }
