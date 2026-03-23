@@ -8,8 +8,26 @@
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 #define SHM_NAME "/prod_cons_buffer"
+
+void run_program(const char *program) {
+    pid_t pid = fork();
+
+    if(pid < 0) {
+        perror("fork failed");
+        exit(1);
+    }
+    else if(pid == 0) {
+        execl(program, program, NULL);
+        perror("execl failed");
+        exit(1);
+    }
+    else {
+        wait(NULL);
+    }
+}
 
 int main() {
 
@@ -42,6 +60,41 @@ int main() {
     /* Confirmation message */
     printf("Shared buffer created successfully.\n");
     printf("Initial buffer value = %d\n", *buffer);
+
+    int choice;
+    while (1) {
+        printf("\n#==== Select Project =====#\n");
+        printf("1. Producer\n");
+        printf("2. Consumer\n");
+        printf("0. Quit\n");
+        printf("Please enter your choice: ");   
+
+        if (scanf("%d", &choice) != 1) {
+            printf("Invalid input.\n");        
+            while (getchar() != '\n');
+            continue;
+        }
+
+        switch(choice) {
+            case 1:
+                // runs your fork executor
+                run_program("./producer");   
+                break;
+
+            case 2:
+                // runs producer-consumer system
+                run_program("./consumer");  
+                break;
+
+            case 0: 
+                munmap(buffer, sizeof(int));
+                close(shm_fd);
+                return 0;
+
+            default:
+                printf("invalid choice try agian.\n");
+        }
+    }
 
     /* Cleanup */
     munmap(buffer, sizeof(int));

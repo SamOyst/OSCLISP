@@ -23,7 +23,7 @@ void run_program(const char *program) {
         wait(NULL);
     }
 }
-// STILL WIP welcome for some help
+
 int main() { 
 
     int choice;

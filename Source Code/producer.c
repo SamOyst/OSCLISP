@@ -34,7 +34,7 @@ int main() {
     if (buffer == MAP_FAILED) {
         perror("Memory mapping failed");
         return 1;
-    }
+    
 
     /* Overwrite buffer with new value */
     *buffer = value;
