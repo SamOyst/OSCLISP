@@ -32,7 +32,7 @@ int main() {
         printf("\n#==== Select Project =====#\n");
         printf("1. Fork-Based Task Executor System\n");
         printf("2. Producer-Consumer Simulation System\n");
-        printf("3. Quit\n");
+        printf("0. Quit\n");
         printf("Please enter your choice: ");   
 
         if (scanf("%d", &choice) != 1) {
@@ -52,7 +52,7 @@ int main() {
                 run_program("./producer_consumer");  
                 break;
 
-            case 3: 
+            case 0: 
                 return 0;
 
             default:
